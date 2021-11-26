@@ -1,15 +1,19 @@
 <template>
   <main>
-     <h1>
-        
-     </h1>
+     <CardList />
   </main>
 </template>
 
 <script>
+
+import CardList from './CardList.vue';
+
 export default {
    // gli si assegna il nome prima di importarlo
-   name: "Main"
+   name: "Main",
+   components: {
+      CardList
+   }
 }
 </script>
 
