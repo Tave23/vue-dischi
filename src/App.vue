@@ -25,4 +25,8 @@ export default {
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./assets/style/generals.scss";
 
+div{
+  overflow: hidden;
+}
+
 </style>

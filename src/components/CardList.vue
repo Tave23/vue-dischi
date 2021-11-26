@@ -9,6 +9,10 @@
             :singleCard="singleCard"
             class="card-container">
                <img :src="singleCard.poster" alt="">
+               <!-- titolo canzone -->
+               <h5>{{singleCard.title}}</h5>
+               <p>{{singleCard.author}}</p>
+               <p>{{singleCard.year}}</p>
             </div>
 
          </div>
@@ -71,7 +75,19 @@ export default {
 
 .card-container img{
    width: 70%;
-   margin: 0 auto;
+   height: 60%;
+   margin: 0 auto 10px;
+   padding-bottom: 25px;
+}
+
+h5{
+   text-transform: uppercase;
+   color: white;
+   font-size: 14px;
+}
+
+p{
+   margin-bottom: -7px;
 }
 
 </style>
