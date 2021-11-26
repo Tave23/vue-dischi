@@ -20,7 +20,7 @@ export default {
 header{
    height: 75px;
    width: 100vw;
-   background-color: $header-color;
+   background-color: $header-card-color;
    line-height: 75px;
    padding-left: 10px;
 }
