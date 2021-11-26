@@ -64,6 +64,7 @@ export default {
 
 .box.d-flex{
    flex-wrap: wrap;
+   justify-content: center;
 }
 
 .card-container{
