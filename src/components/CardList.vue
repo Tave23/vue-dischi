@@ -51,7 +51,7 @@ export default {
                console.log(this.musicList);
 
                // quando ha stampato diventa true
-               // this.printed = true;
+               this.printed = true;
                 
             })
             .catch(error => {
