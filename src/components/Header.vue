@@ -3,13 +3,20 @@
       <div class="box-logo">
          <img src="../assets/logo.png" alt="Logo">
       </div>
+      <Select />
   </header>
 </template>
 
 <script>
+
+import Select from './Select.vue';
+
 export default {
    // gli si assegna il nome prima di importarlo
-   name: "Header"
+   name: "Header",
+   components: {
+   Select
+  }
 }
 </script>
 
@@ -23,6 +30,8 @@ header{
    background-color: $header-card-color;
    line-height: 75px;
    padding-left: 10px;
+   display: flex;
+   justify-content: space-between;
 }
 
 .box-logo{
