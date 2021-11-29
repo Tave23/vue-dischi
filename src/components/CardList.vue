@@ -1,12 +1,22 @@
 <template>
    <div class="container text-center p-5">
       <div class="row">
+         <div class="col-5 m-auto">
+            <div class="box">
+
+               <Select 
+               @changeValue="filterGenr"/>
+
+            </div>
+         </div>
+      </div>
+      <div class="row">
          <div 
          v-if= "printed"
          class="box d-flex">
 
             <div 
-            v-for= "singleCard in musicList"
+            v-for= "singleCard in filterCharacters"
             :key= "singleCard.id"
             :singleCard= "singleCard"
             class="card-container">
@@ -32,14 +42,20 @@
 
 // importo axios
 import axios from 'axios';
+import Select from './Select.vue';
 
 export default {
+  components: { 
+   Select 
+   },
    // gli si assegna il nome prima di importarlo
    name: "CardList",
    data(){
       return{
          musicList: [],
-         printed: false
+         printed: false,
+
+         genrType: ''
       }
    },
    methods:{
@@ -59,14 +75,32 @@ export default {
                
             })
             
+      // funzione per filtrare 
+      },
+      filterGenr(selectedGenre){
+
+         console.log('selectedGenre', selectedGenre)
+
+         this.genrType =selectedGenre
+
+         console.log('genrType', this.genrType)
+
+         return this.genrType
       }
    },
    // faccio partire axios al caricamento della pagina
    mounted(){
       this.startApi();
    },
-   props:{
-      singleCard: Object
+   computed:{
+      filterCharacters(){
+      if(this.genrType === "default"){
+        return this.musicList
+      }
+      return this.musicList.filter(singleCard => {
+        return singleCard.genre.includes(this.genrType)
+      })
+    }
    }
 }
 </script>

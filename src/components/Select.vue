@@ -4,12 +4,13 @@
      id="select"
      class="form-select form-select-md mb-3" 
      aria-label=".form-select-lg example"
-     @change="getValue">
-         <option value="1">Seleziona il genere musicale</option>
-         <option value="2">Rock</option>
-         <option value="3">Pop</option>
-         <option value="4">Jazz</option>
-         <option value="5">Metal</option>
+     v-model="selectedGenre"
+     @change="$emit('changeValue', selectedGenre)">
+         <option value="default" selected>Seleziona il genere musicale</option>
+         <option value="Rock">Rock</option>
+         <option value="Pop">Pop</option>
+         <option value="Jazz">Jazz</option>
+         <option value="Metal">Metal</option>
       </select>
   </div>
 </template>
@@ -19,17 +20,17 @@
 
 export default {
    name: 'Select',
-
-   methods:{
-      getValue(){
-
-         let select = document.getElementById('select');
-         console.log(select.value);
+   data(){
+      return{
+         selectedGenre: 'default',
       }
    },
-   mounted(){
+   methods:{
       
    },
+   mounted(){
+
+   }
 }
 
 </script>
