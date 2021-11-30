@@ -25,6 +25,7 @@ main{
    height: calc(100vh - 75px);
    width: 100vw;
    background-color: $main-color;
+   overflow-y: scroll;
 }
 
 </style>

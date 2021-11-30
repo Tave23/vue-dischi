@@ -5,7 +5,7 @@
             <div class="box">
 
                <Select 
-               @changeValue="filterGenr"/>
+               @formSelectToCardList="filterGenr"/>
 
             </div>
          </div>
@@ -75,9 +75,9 @@ export default {
                
             })
             
-      // funzione per filtrare 
       },
       filterGenr(selectedGenre){
+         // riprendo lo stesso nome della variabile che ho preso dal figlio (selectedGenre) come parametro
 
          console.log('selectedGenre', selectedGenre)
 
@@ -93,6 +93,7 @@ export default {
       this.startApi();
    },
    computed:{
+   // funzione per filtrare 
       filterCharacters(){
       if(this.genrType === "default"){
         return this.musicList
@@ -124,6 +125,7 @@ export default {
 .card-container:hover{
    color: grey;
    background-color: $hover-bg-color;
+
 }
 
 .card-container img{
